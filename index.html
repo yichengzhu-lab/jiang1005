@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高三高频词 · 认词本</title>
+<style>
+:root{--bg:#f6f1e7;--card:#fffdf8;--ink:#2b2622;--mute:#8a8176;--line:#e4dccb;--acc:#c4532d;--acc2:#2f6f5e;--bad:#b3261e;--good:#2f7d4f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Songti SC","Noto Serif SC",Georgia,serif;line-height:1.6}
+header{padding:18px 20px 8px;max-width:860px;margin:auto}
+h1{font-size:22px;margin:0 0 4px;letter-spacing:1px}
+.sub{color:var(--mute);font-size:13px;font-family:system-ui,sans-serif}
+.bar{height:6px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc2);width:0;transition:width .4s}
+nav{max-width:860px;margin:6px auto 0;padding:0 14px;display:flex;gap:6px;flex-wrap:wrap;font-family:system-ui,sans-serif}
+nav button{border:1px solid var(--line);background:transparent;padding:8px 14px;border-radius:20px;font-size:14px;cursor:pointer;color:var(--ink)}
+nav button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+main{max-width:860px;margin:14px auto 60px;padding:0 14px;font-family:system-ui,"PingFang SC",sans-serif}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px;font-size:13px;color:var(--mute)}
+.chip{border:1px solid var(--line);background:#fff;padding:4px 12px;border-radius:14px;cursor:pointer;font-size:13px;color:var(--ink)}
+.chip.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.flash{min-height:280px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer;user-select:none;padding:20px}
+.en{font-family:Georgia,serif;font-size:38px;font-weight:700;word-break:break-word}
+.pos{color:var(--mute);font-size:14px;margin-top:4px;font-style:italic;font-family:Georgia,serif}
+.zh{font-size:28px;color:var(--acc);font-weight:600;margin-top:6px}
+.ex{margin-top:14px;font-family:Georgia,serif;font-size:17px;color:#4a433b;max-width:560px}
+.ex b{color:var(--acc2);background:#e3efe9;padding:0 3px;border-radius:3px}
+.hint{color:var(--mute);font-size:13px;margin-top:18px}
+.btns{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.btn{border:0;border-radius:10px;padding:12px 26px;font-size:16px;cursor:pointer;font-weight:600}
+.btn.no{background:#f3dcd6;color:var(--bad)}.btn.yes{background:#d8ebde;color:var(--good)}
+.btn.pri{background:var(--ink);color:#fff}
+.speak{border:1px solid var(--line);background:#fff;border-radius:50%;width:34px;height:34px;cursor:pointer;margin-left:10px;font-size:15px;vertical-align:middle}
+.q{font-size:26px;text-align:center;margin:12px 0 4px;font-family:Georgia,"Songti SC",serif;font-weight:700}
+.qs{font-size:19px;text-align:center;margin:12px auto 18px;font-family:Georgia,serif;max-width:620px}
+.blank{display:inline-block;min-width:80px;border-bottom:2px solid var(--acc);color:var(--acc);text-align:center;font-weight:700}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+@media(max-width:560px){.opts{grid-template-columns:1fr}.en{font-size:30px}}
+.opt{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:13px 14px;font-size:16px;cursor:pointer;text-align:left}
+.opt:hover{border-color:var(--ink)}
+.opt.right{background:#d8ebde;border-color:var(--good)}.opt.wrong{background:#f3dcd6;border-color:var(--bad)}
+.fb{margin-top:14px;text-align:center;min-height:48px;font-size:15px}
+.score{text-align:center;padding:30px 0}
+.score big{font-size:56px;display:block;color:var(--acc);font-family:Georgia,serif}
+.group{margin-bottom:16px;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.group h3{margin:0;padding:12px 16px;background:#efe7d6;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.group h3 button{font-size:12px}
+.tip{padding:10px 16px;background:#fff6e0;font-size:14px;color:#5b4a1e;border-bottom:1px solid var(--line)}
+.group table{width:100%;border-collapse:collapse;font-size:14.5px}
+.group td{padding:9px 16px;border-top:1px solid var(--line);vertical-align:top}
+.group td:first-child{font-family:Georgia,serif;font-weight:700;white-space:nowrap}
+.group td small{display:block;color:var(--mute);font-family:Georgia,serif;font-size:13px;font-weight:400}
+.wl{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.wl:last-child{border:0}
+.wl b{font-family:Georgia,serif}
+.m h3{margin:20px 0 6px;font-size:17px}.m p{margin:4px 0;font-size:15px}
+.m h3:first-child{margin-top:0}
+.tag{font-size:12px;background:#efe7d6;border-radius:4px;padding:1px 6px;margin-left:6px;color:var(--mute)}
+</style>
+</head>
+<body>
+<header>
+  <h1>高三高频词 · 认词本</h1>
+  <div class="sub" id="stat"></div>
+  <div class="bar"><i id="bar"></i></div>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+
+<script>
+/* ============ 数据：en | 词性 | 中文 | 例句（{{ }} 内为填空位置） ============ */
+const RAW = `
+charm|n./v.|魅力；迷住|Her {{charm}} won everyone over.
+breakthrough|n.|突破|Scientists made a major {{breakthrough}} in cancer research.
+undergraduate|n.|本科生|She is an {{undergraduate}} majoring in physics.
+agree to disagree|phr.|求同存异；各持己见|After an hour, we decided to agree to disagree.
+crown|n./v.|王冠；加冕；使圆满|The team was {{crown}}ed champion.
+reinforce|v.|加强；增援|The story {{reinforce}}s the idea that hard work pays off.
+perspective|n.|视角；观点|Try to see the problem from another {{perspective}}.
+respective|adj.|各自的|The twins went to their {{respective}} rooms.
+prospect|n.|前景；期望|The {{prospect}} of a holiday cheered everyone up.
+respectful|adj.|尊敬的（表态度）|Students should be {{respectful}} to their teachers.
+respectable|adj.|值得尊敬的；体面的|He has a {{respectable}} job in a bank.
+prospective|adj.|预期的；潜在的|{{prospective}} students toured the campus.
+readiness|n.|准备就绪；乐意|The army is in a state of {{readiness}}.
+spark|n./v.|火花；引发|The speech {{spark}}ed a heated debate.
+enliven|v.|使活跃；使生动|Music can {{enliven}} any party.
+go viral|phr.|（网络上）疯传|Her video is sure to {{go viral}}.
+suppress|v.|压制；抑制|He tried to {{suppress}} a laugh.
+empathy|n.|共情；同理心|Good doctors show {{empathy}} for patients.
+inclusive|adj.|包容的；包含在内的|The school promotes an {{inclusive}} environment.
+exclusive|adj.|独家的；排他的；高档的|The paper got an {{exclusive}} interview with the star.
+intense|adj.|强烈的；剧烈的|The summer heat was {{intense}}.
+intensive|adj.|密集的；强化的|She took an {{intensive}} English course.
+extensive|adj.|广泛的；大量的|He has {{extensive}} knowledge of history.
+readily|adv.|乐意地；轻易地|She {{readily}} agreed to help.
+trait|n.|特征；特点|Honesty is her best {{trait}}.
+very|adj.|正是；恰恰（the very + n.）|That's the {{very}} thing I was looking for.
+collective|adj./n.|集体的|It was a {{collective}} decision.
+by-product|n.|副产品|Pollution is a {{by-product}} of industry.
+dedicate|v.|奉献；致力于|She {{dedicate}}d her life to teaching.
+commit|v.|承诺；投入；犯（罪）|He {{commit}}ted himself to the project.
+be committed/dedicated + doing/sth.|phr.|致力于（做）某事|She is dedicated to helping others.
+check|v./n.|检查；核对；阻止|Please {{check}} your answers again.
+tuition|n.|学费；教学|University {{tuition}} keeps rising.
+dilemma|n.|困境；两难|She faced a {{dilemma}}: stay or leave.
+consequence|n.|后果|Every choice has a {{consequence}}.
+investment|n.|投资；投入|Education is an {{investment}} in the future.
+evident|adj.|明显的|It was {{evident}} that he was tired.
+compelling|adj.|令人信服的；引人入胜的|She gave a {{compelling}} argument.
+complicated|adj.|复杂的|The rules are far too {{complicated}}.
+echo|n./v.|回声；共鸣；附和|His words {{echo}}ed in the empty hall.
+issue|n./v.|问题；议题；发行|Climate change is a global {{issue}}.
+orderly|adj.|有序的；整齐的|They left the hall in an {{orderly}} way.
+alike|adj./adv.|相像的；同样地|The two sisters look {{alike}}.
+campaign|n./v.|运动；活动|They launched a {{campaign}} to save water.
+upgrade|v./n.|升级|I need to {{upgrade}} my phone.
+discount|n./v.|折扣|Students get a 20% {{discount}}.
+interest|n./v.|兴趣；利息|He has a keen {{interest}} in music.
+formal|adj.|正式的|Wear {{formal}} clothes to the ceremony.
+dive into|phr.|潜入；投入（研究/做）|Let's {{dive into}} the details.
+household|n./adj.|家庭；家用的|Every {{household}} received a notice.
+appeal|n./v.|吸引力；呼吁；上诉|The idea {{appeal}}s to me.
+conversational|adj.|会话的；健谈的|She spoke in a {{conversational}} tone.
+initial|adj./n.|最初的|My {{initial}} reaction was surprise.
+approval|n.|批准；赞同|You need your parents' {{approval}}.
+dissolution|n.|解散；分解；终止|The {{dissolution}} of the company shocked the staff.
+stir|v./n.|搅动；激起；轰动|The news {{stir}}red up strong feelings.
+mindset|n.|思维方式；心态|A growth {{mindset}} helps you learn.
+peer|n.|同龄人；同辈|Teenagers care what their {{peer}}s think.
+source|n.|来源|The Internet is a rich {{source}} of information.
+break out|phr.|（战争、火灾等）爆发|War may {{break out}} at any time.
+turn over|phr.|翻转；移交；仔细考虑|Please {{turn over}} the page.
+break apart|phr.|分裂；拆散；破碎|The old ship began to {{break apart}}.
+fade|v.|褪色；逐渐消失|The colors will {{fade}} in the sun.
+contact|n./v.|联系；接触|Please {{contact}} me by email.
+column|n.|专栏；柱；列|He writes a weekly {{column}} for the paper.
+columnist|n.|专栏作家|The {{columnist}} criticized the new policy.
+anticipate|v.|预料；期待|We {{anticipate}} heavy traffic today.
+anticipatory|adj.|预期的；预先的|He felt an {{anticipatory}} thrill before the show.
+astronomer|n.|天文学家|The {{astronomer}} discovered a new star.
+abuse|n./v.|滥用；虐待|Drug {{abuse}} harms the body.
+broad|adj.|宽的；广泛的|She has a {{broad}} range of interests.
+diversify|v.|使多样化|Companies should {{diversify}} their products.
+mature|adj./v.|成熟的；（使）成熟|He is {{mature}} for his age.
+initiate|v.|发起；开始|The mayor {{initiate}}d a new plan.
+release|v./n.|释放；发布|The band will {{release}} a new album.
+launch|v./n.|发射；发起；推出|They will {{launch}} the product next month.
+deliberate|adj./v.|故意的；深思熟虑的|It was a {{deliberate}} choice, not an accident.
+origin|n.|起源；出身|The {{origin}} of the word is Latin.
+interpret|v.|解释；口译|How do you {{interpret}} this poem?
+interpret sth. as sth.|phr.|把某事理解为某事|He interpreted my silence as agreement.
+outshine|v.|比…更出色；使黯然失色|She {{outshine}}d all her rivals.
+notable|adj.|值得注意的；著名的|He is {{notable}} for his generosity.
+orbit|n./v.|轨道；绕轨道运行|The Earth's {{orbit}} is nearly circular.
+disrupt|v.|扰乱；使中断|Snow {{disrupt}}ed train services.
+interplay|n.|相互作用|The {{interplay}} of light and shadow is lovely.
+slide|v./n.|滑动；下滑；幻灯片|Prices began to {{slide}}.
+sensibility|n.|感受力；敏感|The poem shows the artist's {{sensibility}}.
+justify|v.|证明…合理|Nothing can {{justify}} violence.
+previous|adj.|先前的|My {{previous}} job was in sales.
+likelihood|n.|可能性|There's little {{likelihood}} of rain.
+instinctive|adj.|本能的|Fear is an {{instinctive}} reaction.
+infer|v.|推断|What can we {{infer}} from this evidence?
+mastery|n.|精通；掌握|Her {{mastery}} of English is impressive.
+set back|phr.|使延误；阻碍|The delay will {{set back}} the project by a week.
+apply to|phr.|适用于；向…申请|These rules {{apply to}} everyone.
+require sth. to be done|phr.|要求某事被完成|The law requires the work to be done on time.
+from time to time|phr.|偶尔；有时|We meet {{from time to time}}.
+enforce|v.|实施；强制执行|Police {{enforce}} the law.
+move|v.|感动；移动|The film {{move}}d me to tears.
+exposure to|phr.|接触；暴露于|Too much exposure to the sun is harmful.
+expose to|phr.|使暴露于；使接触|Parents should expose children to art early.
+rural|adj.|农村的|Many {{rural}} families moved to the cities.
+determination|n.|决心；坚定|She showed great {{determination}}.
+resolution|n.|决议；决心；解决；分辨率|The council passed a {{resolution}}.
+commitment|n.|承诺；投入|Marriage is a serious {{commitment}}.
+transmission|n.|传播；传输|The {{transmission}} of the virus was slowed.
+inevitable|adj.|不可避免的|Change is {{inevitable}}.
+avoidable|adj.|可避免的|The accident was easily {{avoidable}}.
+identify|v.|识别；认同|Can you {{identify}} the man in the photo?
+symptom|n.|症状；征兆|A fever is a {{symptom}} of flu.
+hospitable|adj.|好客的|The villagers were warm and {{hospitable}}.
+emerge|v.|出现；浮现|The truth began to {{emerge}}.
+attainable|adj.|可达到的|Set goals that are {{attainable}}.
+awful|adj.|糟糕的；可怕的|The weather was {{awful}}.
+comprise|v.|包含；由…组成|The team {{comprise}}s ten players.
+counter|v./n.|反驳；抵制；柜台|He tried to {{counter}} the criticism.
+controversial|adj.|有争议的|It's a {{controversial}} topic.
+contradictory|adj.|矛盾的|They gave {{contradictory}} reports.
+consultant|n.|顾问|She works as a management {{consultant}}.
+live up to|phr.|不辜负；达到（期望）|He couldn't {{live up to}} their expectations.
+dimension|n.|维度；方面；尺寸|Add a new {{dimension}} to your work.
+enterprising|adj.|有进取心的；有事业心的|An {{enterprising}} student started a business.
+discriminate|v.|歧视；区别|It is illegal to {{discriminate}} against women.
+agree with sb.|phr.|同意某人（的看法）|I agree with you completely.
+agree on|phr.|就…达成一致|They finally agreed on a date.
+agree to|phr.|同意（提议/计划）|He agreed to our plan.
+proceed|v.|继续进行；前往|Please {{proceed}} to Gate 5.
+practical|adj.|实际的；实用的|She gave me some {{practical}} advice.
+practice|n./v.|练习；实践|Daily {{practice}} makes perfect.
+prey|n./v.|猎物；捕食|The lion hunts its {{prey}} at night.
+pray|v.|祈祷|They {{pray}} for peace.
+previously|adv.|以前|She {{previously}} worked in Paris.
+prior to|phr.|在…之前|Please arrive {{prior to}} 8 a.m.
+priority|n.|优先事项|Safety is our top {{priority}}.
+prejudice|n.|偏见|There is still {{prejudice}} against older workers.
+anchor|n./v.|锚；新闻主播；使固定|The ship dropped {{anchor}}.
+harmonious|adj.|和谐的|They live in a {{harmonious}} community.
+literature|n.|文学|He studies English {{literature}}.
+literary|adj.|文学的|She won a {{literary}} prize.
+literacy|n.|读写能力|Adult {{literacy}} has risen sharply.
+identity|n.|身份；认同|Protect your online {{identity}}.
+identical|adj.|完全相同的|The twins wore {{identical}} dresses.
+identification|n.|身份证明；识别|Please show some {{identification}}.
+integrate|v.|融入；整合|Newcomers need time to {{integrate}} into society.
+integral|adj.|不可或缺的；构成整体的|Music is an {{integral}} part of life.
+integrity|n.|正直；完整|He is a man of {{integrity}}.
+pioneer|n./v.|先驱；开拓|She was a {{pioneer}} in computing.
+plunge|v./n.|猛跌；投入；跳入|Share prices {{plunge}}d overnight.
+possess|v.|拥有|He {{possess}}es a rare talent.
+possession|n.|拥有；财产|Keep your {{possession}}s safe.
+pilot|n./v./adj.|飞行员；试点（的）|The {{pilot}} landed the plane safely.
+persevere|v.|坚持不懈|If you {{persevere}}, you will succeed.
+criterion|n.|标准（单数）|Price is the main {{criterion}}.
+criteria|n.|标准（复数）|Several {{criteria}} must be met.
+compose|v.|组成；创作|He {{compose}}d a symphony.
+consist|v.|由…组成（consist of）|The group {{consist}}s of five members.
+constitute|v.|构成；相当于|Women {{constitute}} half of the workforce.
+`.trim().split('\n');
+
+const W = RAW.map((l,i)=>{const [en,pos,zh,ex]=l.split('|');
+  const plain=ex.replace(/\{\{(.+?)\}\}/g,'$1');
+  const html=ex.replace(/\{\{(.+?)\}\}/g,'<b>$1</b>');
+  const clozeOK=/\{\{/.test(ex)&&!/[\/]|sth|sb/.test(en);
+  return {en,pos,zh,ex,plain,html,clozeOK,i};});
+const byEn=Object.fromEntries(W.map(w=>[w.en,w]));
+
+/* ============ 辨析组 ============ */
+const GROUPS=[
+ {t:'prospect · prospective · perspective · respective · respectful · respectable',
+  tip:'prospect=pro(向前)+spect(看)→前景；perspective=per(透过)+spect→看问题的视角；respect-：re(回头)+spect(看)→“回头看”→尊重。respective=各自的；respectful=<b>我</b>对别人尊敬；respectable=<b>别人</b>觉得他值得尊敬。',
+  w:['prospect','prospective','perspective','respective','respectful','respectable']},
+ {t:'inclusive · exclusive',tip:'in-（里面）→包含在内；ex-（外面）→排除在外→“独家的、高档的”。',w:['inclusive','exclusive']},
+ {t:'intense · intensive · extensive',tip:'intense=程度强烈（热、情绪）；intensive=密度高、强化（课程、训练）；extensive=范围广（知识、搜索）。',w:['intense','intensive','extensive']},
+ {t:'dedicate · commit · commitment · determination · resolution',tip:'dedicate/commit 后面接 to + 名词/doing。commit 还能表示“犯（罪）”。determination=意志上的决心；resolution=下定的决议，也有“解决”。',w:['dedicate','commit','commitment','determination','resolution']},
+ {t:'identify · identity · identical · identification',tip:'词根 ident=相同。identical=完全相同；identity=“和自己相同的那个东西”→身份；identification=身份证件/识别；identify=识别、认同。',w:['identify','identity','identical','identification']},
+ {t:'integrate · integral · integrity',tip:'词根 integr=整体、完整。integrate 融合；integral 是整体中不可缺少的；integrity=完整→品格完整→正直。',w:['integrate','integral','integrity']},
+ {t:'literature · literary · literacy',tip:'liter=字母。literature 文学；literary 文学的；literacy 认字能力（读写能力）。',w:['literature','literary','literacy']},
+ {t:'previous · previously · prior to · priority',tip:'pre/prior=在前。previous 形容词；previously 副词；prior to=before（介词短语）；priority=排在前面的事→优先事项。',w:['previous','previously','prior to','priority']},
+ {t:'comprise · compose · consist · constitute',tip:'整体 comprises 部分（整体=主语）；整体 consists of 部分；部分 compose/constitute 整体（部分=主语）。被动 be composed of ≈ consist of。',w:['comprise','compose','consist','constitute']},
+ {t:'agree with · agree on · agree to',tip:'with+人/观点（同意）；on+事情（就…达成一致）；to+提议/计划（答应）。',w:['agree with sb.','agree on','agree to','agree to disagree']},
+ {t:'issue · release · launch · initiate',tip:'issue=发行/问题；release=释放、发布（歌曲、消息）；launch=发射、推出、发起活动；initiate=开启（一个计划、进程）。',w:['issue','release','launch','initiate']},
+ {t:'inevitable · avoidable',tip:'a-voidable：可避免的；in-evitable：不可避免的（in 表否定）。',w:['inevitable','avoidable']},
+ {t:'contradictory · controversial',tip:'contra-=相反→互相矛盾；controversial=引发争论的（有争议）。',w:['contradictory','controversial']},
+ {t:'column · columnist · anticipate · anticipatory',tip:'-ist 是“…的人”：columnist=专栏作家。anticipate=提前（ante/anti=前）去占先，预料。',w:['column','columnist','anticipate','anticipatory']},
+ {t:'criterion · criteria',tip:'同 phenomenon / phenomena：单数 -on，复数 -a。',w:['criterion','criteria']},
+ {t:'practical · practice · prey · pray',tip:'practical 形容词“实用的”，practice 名词/动词；prey 猎物（被 prey on），pray 祈祷——一个有 e，一个有 a，但这里只考意思即可。',w:['practical','practice','prey','pray']},
+ {t:'exposure to · expose to · readily · readiness',tip:'be exposed to / exposure to 后面都是 to。readily 是副词（乐意地），readiness 是名词（准备好、乐意）。',w:['exposure to','expose to','readily','readiness']},
+];
+const grpOf={};GROUPS.forEach((g,gi)=>g.w.forEach(e=>{if(byEn[e])(grpOf[e]=grpOf[e]||[]).push(gi)}));
+const missing=GROUPS.flatMap(g=>g.w).filter(e=>!byEn[e]);if(missing.length)console.warn('missing',missing);
+
+/* ============ 存储 ============ */
+let mem={box:{},wrong:{}};
+const KEY='vocab_gk_v1';
+function load(){try{const s=localStorage.getItem(KEY);if(s)mem=JSON.parse(s)}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(mem))}catch(e){}stat()}
+const box=w=>mem.box[w.en]||0;
+function stat(){
+  const m=W.filter(w=>box(w)>=3).length;
+  document.getElementById('stat').textContent=`共 ${W.length} 个 · 已掌握 ${m} · 错词本 ${Object.keys(mem.wrong).length}`;
+  document.getElementById('bar').style.width=(m/W.length*100)+'%';
+}
+
+/* ============ 工具 ============ */
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace(/[\/+].*$/,'').replace(/sth\.|sb\./g,'something'));u.lang='en-US';u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
+const posKey=w=>w.pos.split('/')[0].replace(/\./g,'');
+function distractors(w,n,sameZhOK=false){
+  let c=[];(grpOf[w.en]||[]).forEach(g=>GROUPS[g].w.forEach(e=>{if(e!==w.en&&byEn[e])c.push(byEn[e])}));
+  c=shuffle(c);
+  const rest=shuffle(W.filter(x=>x!==w&&posKey(x)===posKey(w)&&!c.includes(x)));
+  c=c.concat(rest).concat(shuffle(W));
+  const out=[];const seen=new Set([w.zh]);
+  for(const x of c){if(out.length>=n)break;if(x===w||out.includes(x)||seen.has(x.zh))continue;seen.add(x.zh);out.push(x)}
+  return out;
+}
+
+/* ============ 导航 ============ */
+const TABS=[['flash','闪卡'],['quiz','选择题'],['cloze','语境填空'],['group','易混辨析'],['wrong','错词本'],['how','记忆方法']];
+let tab='flash';
+function nav(){
+  $('nav').innerHTML=TABS.map(([k,v])=>`<button class="${k===tab?'on':''}" onclick="go('${k}')">${v}</button>`).join('');
+}
+function go(t,arg){tab=t;nav();({flash:flashInit,quiz:quizInit,cloze:clozeInit,group:groupView,wrong:wrongView,how:howView})[t](arg);stat()}
+
+/* ============ 闪卡 ============ */
+let fq=[],fcur=null,fflip=false,fmode='all',fdir='en';
+function flashInit(){buildQ();next()}
+function buildQ(){
+  let p=W.slice();
+  if(fmode==='todo')p=p.filter(w=>box(w)<3);
+  if(fmode==='wrong')p=p.filter(w=>mem.wrong[w.en]);
+  fq=shuffle(p).sort((a,b)=>box(a)-box(b)).slice(0,30);
+  fq=fq.slice(0,12).concat(shuffle(fq.slice(12)));
+}
+function next(){
+  if(!fq.length){buildQ();if(!fq.length){$('main').innerHTML=`<div class="panel score">这个范围里没有词了 🎉<br><br><button class="btn pri" onclick="fmode='all';flashInit()">回到全部</button></div>`;return}}
+  fcur=fq.shift();fflip=false;drawFlash();
+}
+function drawFlash(){
+  const w=fcur,front=fdir==='en';
+  const chip=(k,t,cur,fn)=>`<span class="chip ${cur===k?'on':''}" onclick="${fn}">${t}</span>`;
+  $('main').innerHTML=`<div class="panel">
+   <div class="row">范围：${chip('all','全部',fmode,"fmode='all';flashInit()")}${chip('todo','未掌握',fmode,"fmode='todo';flashInit()")}${chip('wrong','错词',fmode,"fmode='wrong';flashInit()")}
+   <span style="width:14px"></span>正面：${chip('en','英文',fdir,"fdir='en';drawFlash()")}${chip('zh','中文',fdir,"fdir='zh';drawFlash()")}<span style="margin-left:auto">本轮剩 ${fq.length}</span></div>
+   <div class="flash" onclick="fflip=!fflip;drawFlash()">
+     ${front?`<div class="en">${w.en}<button class="speak" onclick="event.stopPropagation();speak('${w.en.replace(/'/g,"\\'")}')">🔊</button></div><div class="pos">${w.pos}</div>`
+            :`<div class="zh" style="margin:0">${w.zh}</div><div class="pos">${w.pos}</div>`}
+     ${fflip?`<div style="margin-top:14px;border-top:1px dashed var(--line);padding-top:14px;width:100%">
+        ${front?`<div class="zh">${w.zh}</div>`:`<div class="en">${w.en}</div>`}
+        <div class="ex">${w.html}</div></div>`:`<div class="hint">点击卡片翻面 · 空格也行</div>`}
+   </div>
+   <div class="btns"><button class="btn no" onclick="rate(false)">不认识 ✗</button><button class="btn yes" onclick="rate(true)">认识 ✓</button></div>
+   <div class="hint" style="text-align:center">熟练度 ${'●'.repeat(box(w))}${'○'.repeat(Math.max(0,3-box(w)))}　（3 个点 = 已掌握；快捷键 ← 不认识 / → 认识）</div>
+  </div>`;
+}
+function rate(ok){
+  const w=fcur;
+  if(ok){mem.box[w.en]=Math.min(4,box(w)+1)}
+  else{mem.box[w.en]=0;mem.wrong[w.en]=(mem.wrong[w.en]||0)+1;fq.splice(Math.min(fq.length,3+(Math.random()*3|0)),0,w)}
+  save();next();
+}
+document.addEventListener('keydown',e=>{
+  if(tab!=='flash'||!fcur)return;
+  if(e.key===' '){e.preventDefault();fflip=!fflip;drawFlash()}
+  if(e.key==='ArrowLeft')rate(false);if(e.key==='ArrowRight')rate(true);
+});
+
+/* ============ 选择题 ============ */
+let Q={list:[],i:0,ok:0,dir:'en2zh',pool:'all'};
+function quizInit(){
+  const pool=Q.pool==='wrong'?W.filter(w=>mem.wrong[w.en]):Q.pool==='todo'?W.filter(w=>box(w)<3):W;
+  if(!pool.length){$('main').innerHTML=`<div class="panel score">${Q.pool==='wrong'?'错词本是空的，太棒了！':'该范围没有词'}<br><br><button class="btn pri" onclick="Q.pool='all';quizInit()">用全部词</button></div>`;return}
+  Q.list=shuffle(pool).slice(0,10);Q.i=0;Q.ok=0;quizQ();
+}
+function quizQ(){
+  if(Q.i>=Q.list.length){
+    $('main').innerHTML=`<div class="panel score"><big>${Q.ok}/${Q.list.length}</big>${Q.ok===Q.list.length?'全对！':'答错的已自动进入错词本'}<br><br><button class="btn pri" onclick="quizInit()">再来一轮</button></div>`;return}
+  const w=Q.list[Q.i],e2z=Q.dir==='en2zh';
+  const opts=shuffle([w,...distractors(w,3)]);
+  const chip=(k,t,cur,fn)=>`<span class="chip ${cur===k?'on':''}" onclick="${fn}">${t}</span>`;
+  $('main').innerHTML=`<div class="panel">
+   <div class="row">方向：${chip('en2zh','英→中',Q.dir,"Q.dir='en2zh';quizInit()")}${chip('zh2en','中→英',Q.dir,"Q.dir='zh2en';quizInit()")}
+   范围：${chip('all','全部',Q.pool,"Q.pool='all';quizInit()")}${chip('todo','未掌握',Q.pool,"Q.pool='todo';quizInit()")}${chip('wrong','错词本',Q.pool,"Q.pool='wrong';quizInit()")}
+   <span style="margin-left:auto">${Q.i+1} / ${Q.list.length}</span></div>
+   <div class="q">${e2z?w.en:w.zh}${e2z?`<button class="speak" onclick="speak('${w.en.replace(/'/g,"\\'")}')">🔊</button>`:''}</div>
+   <div class="pos" style="text-align:center">${w.pos}</div>
+   <div class="opts">${opts.map(o=>`<button class="opt" data-k="${o.i}" onclick="quizPick(${o.i})">${e2z?o.zh:o.en}</button>`).join('')}</div>
+   <div class="fb" id="fb"></div></div>`;
+}
+function quizPick(i){
+  const w=Q.list[Q.i];if(document.querySelector('.opt.right'))return;
+  const ok=i===w.i;
+  document.querySelectorAll('.opt').forEach(b=>{const k=+b.dataset.k;if(k===w.i)b.classList.add('right');else if(k===i)b.classList.add('wrong')});
+  record(w,ok);if(ok)Q.ok++;
+  $('fb').innerHTML=`<div class="ex" style="margin:0 auto">${w.html}</div><div style="margin-top:10px"><button class="btn pri" onclick="Q.i++;quizQ()">下一题 →</button></div>`;
+}
+function record(w,ok){
+  if(ok){if(mem.wrong[w.en]){mem.wrong[w.en]--;if(mem.wrong[w.en]<=0)delete mem.wrong[w.en]}mem.box[w.en]=Math.min(4,box(w)+1)}
+  else{mem.wrong[w.en]=(mem.wrong[w.en]||0)+1;mem.box[w.en]=0}
+  save();
+}
+
+/* ============ 语境填空 ============ */
+let C={list:[],i:0,ok:0,g:null};
+function clozeInit(g){
+  if(typeof g==='number')C.g=g;else if(g===null||g===undefined||g==='all')C.g=null;
+  const base=W.filter(w=>w.clozeOK&&(C.g===null||GROUPS[C.g].w.includes(w.en)));
+  C.list=shuffle(base).slice(0,10);C.i=0;C.ok=0;clozeQ();
+}
+function clozeQ(){
+  if(C.i>=C.list.length){
+    $('main').innerHTML=`<div class="panel score"><big>${C.ok}/${C.list.length}</big>${C.ok===C.list.length?'全对！':'错的已进入错词本'}<br><br><button class="btn pri" onclick="clozeInit(C.g===null?'all':C.g)">再来一轮</button> <button class="btn no" onclick="C.g=null;clozeInit('all')">全部词</button></div>`;return}
+  const w=C.list[C.i];
+  const pool=C.g!==null?GROUPS[C.g].w.map(e=>byEn[e]).filter(x=>x&&x!==w&&x.clozeOK):[];
+  const ds=pool.length>=3?shuffle(pool).slice(0,3):distractors(w,3).filter(x=>x.clozeOK).concat(distractors(w,6)).filter((x,i,a)=>a.indexOf(x)===i&&x!==w).slice(0,3);
+  const opts=shuffle([w,...ds]);
+  $('main').innerHTML=`<div class="panel">
+   <div class="row">${C.g!==null?'练习：'+GROUPS[C.g].t.split(' · ').slice(0,3).join(' · ')+'…':'范围：全部词'}<span style="margin-left:auto">${C.i+1} / ${C.list.length}</span></div>
+   <div class="qs">${w.ex.replace(/\{\{(.+?)\}\}/,'<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>')}</div>
+   <div class="opts">${opts.map(o=>`<button class="opt" data-k="${o.i}" onclick="clozePick(${o.i})" style="font-family:Georgia,serif">${o.en}</button>`).join('')}</div>
+   <div class="fb" id="fb"></div></div>`;
+}
+function clozePick(i){
+  const w=C.list[C.i];if(document.querySelector('.opt.right'))return;
+  const ok=i===w.i;
+  document.querySelectorAll('.opt').forEach(b=>{const k=+b.dataset.k;if(k===w.i)b.classList.add('right');else if(k===i)b.classList.add('wrong')});
+  record(w,ok);if(ok)C.ok++;
+  const dis=byEn[W[i].en];
+  $('fb').innerHTML=`<div class="ex" style="margin:0 auto">${w.html}</div>
+   <div style="margin:6px 0"><b style="font-family:Georgia">${w.en}</b> = ${w.zh}${!ok?`　<span style="color:var(--mute)">（你选的 ${dis.en} = ${dis.zh}）</span>`:''}</div>
+   <button class="btn pri" onclick="C.i++;clozeQ()">下一题 →</button>`;
+}
+
+/* ============ 易混辨析 ============ */
+function groupView(){
+  $('main').innerHTML=`<div class="sub" style="margin-bottom:10px">把长得像、意思容易串的词放在一起对比。看完点右边“练这一组”用例句填空巩固。</div>`+
+  GROUPS.map((g,gi)=>`<div class="group"><h3><span style="font-family:Georgia,serif;font-size:15px">${g.t}</span><button class="chip" onclick="go('cloze',${gi})">练这一组</button></h3>
+   <div class="tip">💡 ${g.tip}</div>
+   <table>${g.w.map(e=>byEn[e]).filter(Boolean).map(w=>`<tr><td>${w.en}<small>${w.pos}</small></td><td><b style="color:var(--acc)">${w.zh}</b><br><span style="font-family:Georgia,serif;color:#5b534a">${w.html}</span></td></tr>`).join('')}</table></div>`).join('');
+}
+
+/* ============ 错词本 ============ */
+function wrongView(){
+  const ws=W.filter(w=>mem.wrong[w.en]).sort((a,b)=>mem.wrong[b.en]-mem.wrong[a.en]);
+  $('main').innerHTML=`<div class="panel">${ws.length?`
+   <div class="row"><span>共 ${ws.length} 个，按错误次数排序。在测验中答对会逐步消除。</span>
+   <span style="margin-left:auto"><button class="btn pri" style="padding:8px 16px;font-size:14px" onclick="fmode='wrong';go('flash')">用闪卡复习</button>
+   <button class="btn pri" style="padding:8px 16px;font-size:14px" onclick="Q.pool='wrong';go('quiz')">用选择题复习</button></span></div>
+   ${ws.map(w=>`<div class="wl"><div><b>${w.en}</b><span class="tag">${w.pos}</span><br><span style="color:#5b534a;font-size:14px">${w.html}</span></div><div style="text-align:right;color:var(--acc);font-weight:600">${w.zh}<br><span style="color:var(--mute);font-weight:400;font-size:12px">错 ${mem.wrong[w.en]} 次</span></div></div>`).join('')}`
+   :`<div class="score">错词本是空的。<br>去做几轮测验吧。</div>`}
+   <div style="text-align:right;margin-top:16px"><span class="chip" onclick="if(confirm('清空所有进度和错词？')){mem={box:{},wrong:{}};save();wrongView()}">重置全部进度</span></div></div>`;
+}
+
+/* ============ 记忆方法 ============ */
+function howView(){
+  $('main').innerHTML=`<div class="panel m">
+  <h3>1. 间隔重复（闪卡的做法）</h3><p>每个词一天看 1 次、隔 2–3 天再看、隔一周再看，比一次背 10 遍有效得多。页面里“认识”会升级熟练度，“不认识”会清零并在本轮几张后再出现。每天 10–15 分钟，比周末集中 2 小时好。</p>
+  <h3>2. 主动回忆，别只看</h3><p>先看英文，<b>先在心里说出意思</b>再翻面。翻面前那几秒的“想不起来”才是真正在记忆。也可以切换成“中文在正面”，反向回忆。</p>
+  <h3>3. 放进句子里</h3><p>孤立的词义容易忘；带着例句记，就能同时记住搭配和用法（如 agree <u>with</u> 人 / <u>on</u> 事 / <u>to</u> 计划）。语境填空就是练这个。</p>
+  <h3>4. 把容易混的词放一起比</h3><p>prospect / respective / respectful / respectable 这种词，分开背最容易串。“易混辨析”页给了每组一个区分线索（词根、词性、主语方向）。</p>
+  <h3>5. 拆词根，一个根记一串</h3><p>spect=看（prospect, perspective, respect）；ident=相同（identical, identity, identify）；integr=整体（integrate, integral, integrity）；liter=字母（literature, literary, literacy）；pre/prior=前（previous, previously, prior to, priority）。</p>
+  <h3>6. 错词本优先</h3><p>错过的词，下次最可能再错。每天先清错词，再做新词，错词本会随着你答对自动变短。</p>
+  <h3>7. 让学生自己“教”你</h3><p>家教时可以让学生给每个词编一个自己的句子，或用中文解释给你听。能讲清楚，才是真会了。</p>
+  </div>`;
+}
+
+load();nav();stat();flashInit();
+</script>
+</body>
+</html>
